@@ -16,14 +16,15 @@ const App: React.FC = () => {
    *
    * @param state - LEDの希望する状態（'on' または 'off'）。
    */
-  const [backgroundColor, setBackgroundColor] = useState<string>('#FFFFFF');
+  const [backgroundColor, setBackgroundColor] = useState<string>('#C0C0C0');
   const toggleLED = async (state: 'white'| 'red'| 'green'| 'blue'| 'yellow'| 'purple'| 'cyan'| 'black') => {
     try {
       // LEDの状態を変更するためにRaspberry PiサーバーにPOSTリクエストを送信する。
       const response = await axios.post('http://raspberrypi.local:5000/led', { state });
       console.log(response.data);
-      Alert.alert(`LEDが${state}になりました`);
+      //Alert.alert(`LEDが${state}になりました`);
       switch(state){
+        case 'white'  : setBackgroundColor('#C0C0C0'); break;
         case 'red'    : setBackgroundColor('#C00000'); break;
         case 'green'  : setBackgroundColor('#00C000'); break;
         case 'blue'   : setBackgroundColor('#0000C0'); break;
@@ -74,7 +75,6 @@ const styles = StyleSheet.create({
     flex: 1, // 画面の全高さを占める
     justifyContent: 'center', // コンテンツを垂直方向に中央に配置する
     alignItems: 'center', // コンテンツを水平方向に中央に配置する
-    backgroundColor: '#FFFFFF', // 背景色を白に設定
   },
   row: {
     flexDirection: 'row', // 子要素を横に並べる
@@ -93,7 +93,6 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 40, // フォントサイズを設定
-    width: 250, // ボタンの幅を設定
     textAlign: 'center', // テキストを中央揃えにする
   },
 });
