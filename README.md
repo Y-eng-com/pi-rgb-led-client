@@ -21,10 +21,12 @@
    ```bash
    git clone https://github.com/Y-eng-com/pi-rgb-led-client.git
    cd pi-rgb-led-client
+   ```
 
 2.	依存関係をインストール
    ```bash
    npm install
+   ```
 
 3.	サーバーを起動
    ```bash
