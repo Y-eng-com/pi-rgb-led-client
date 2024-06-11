@@ -17,29 +17,29 @@
 
 ### インストール手順
 
-1. リポジトリをクローン
+1.	リポジトリをクローン
    ```bash
    git clone https://github.com/Y-eng-com/pi-rgb-led-client.git
    cd pi-rgb-led-client
    ```
-
 2.	依存関係をインストール
    ```bash
    npm install
    ```
-
-3.	サーバーを起動
+3.	開発サーバーを起動
    ```bash
    npm start
-
+   ```
 4.	アプリをエミュレータまたは実機で起動
 	•	Android:
-      ```bash
-      npm run android
-
+   ```bash
+   npm run android
+   ```
 	•	iOS:
-      ```bash
-      npm run android
+   ```bash
+   npm run ios
+   ```
+
 
 ## 使い方
 
